@@ -8,6 +8,12 @@ spec:
   containers:
     - name: web
       image: knightlyflo/otus-kuber-2022-12:kubernetes-intro
+      livenessProbe:
+        tcpSocket: { port: 8000 }
+      readinessProbe:
+        httpGet:
+          path: /index.html
+          port: 80
       volumeMounts:
         - mountPath: /app
           name: app
