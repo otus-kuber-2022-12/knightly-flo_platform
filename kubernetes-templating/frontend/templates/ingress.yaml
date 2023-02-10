@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - host: shop.158.160.37.96.nip.io
-      secretName: 158.160.37.96.nip.io-tls
+        - "shop.158.160.37.96.nip.io"
+      secretName: shop.158.160.37.96.nip.io-tls
   rules:
-  - host: 158.160.37.96.nip.io
+  - host: shop.158.160.37.96.nip.io
     http:
       paths:
       - pathType: Prefix
