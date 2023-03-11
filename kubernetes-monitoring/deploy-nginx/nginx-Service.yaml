@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx-metrics
+spec:
+  selector:
+    app: nginx-deploy
+  type: ClusterIP
+  ports:
+  - name: nginxmon
+    port: 8080
+    targetPort: 9113
+    protocol: TCP
